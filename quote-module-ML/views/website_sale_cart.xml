@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="website_sale.cart" inherit_id="website_sale.cart">
+    <xpath expr="//button[@name='checkout']" position="replace">
+      <button type="button" class="btn btn-primary" name="action_add_to_quote" string="Agregar a Cotización"/>
+    </xpath>
+  </template>
+</odoo>
