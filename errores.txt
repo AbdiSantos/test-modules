@@ -1,1 +1,7 @@
 <script type="text/javascript" src="/my_module/static/src/js/button.js"></script>
+events: {
+    "click . my_class": "call_function",
+},
+call_function: function () {
+    console.log('Click')
+},
