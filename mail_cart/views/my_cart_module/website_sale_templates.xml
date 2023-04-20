@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="website_sale.cart_lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//table[@class='table table-condensed']/tfoot/tr/td[contains(@class, 'text-right')]" position="before">
+            <td>
+                <button class="btn btn-primary" id="my_cart_button">Show Cart Contents</button>
+            </td>
+        </xpath>
+    </template>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#my_cart_button').click(function (event) {
+                event.preventDefault();
+                var cartItems = [];
+                $('table#cart_products tbody tr').each(function () {
+                    var productId = $(this).find('.product_id input').val();
+                    var productQty = $(this).find('.js_quantity input').val();
+                    cartItems.push({'id': productId, 'qty': productQty});
+                });
+                console.log(cartItems);
+            });
+        });
+    </script>
+</odoo>
