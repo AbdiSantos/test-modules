@@ -1,4 +1,4 @@
-cent call last):
+Traceback (most recent call last):
   File "/odoo/odoo-server/odoo/http.py", line 1583, in _serve_db
     return service_model.retrying(self._serve_ir_http, self.env)
   File "/odoo/odoo-server/odoo/service/model.py", line 134, in retrying
@@ -43,15 +43,13 @@ cent call last):
     tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
   File "/odoo/odoo-server/odoo/tools/convert.py", line 763, in convert_file
     convert_xml_import(cr, module, fp, idref, mode, noupdate)
-  File "/odoo/odoo-server/odoo/tools/convert.py", line 808, in convert_xml_import
-    doc = etree.parse(xmlfile)
-  File "src/lxml/etree.pyx", line 3521, in lxml.etree.parse
-  File "src/lxml/parser.pxi", line 1880, in lxml.etree._parseDocument
-  File "src/lxml/parser.pxi", line 1900, in lxml.etree._parseFilelikeDocument
-  File "src/lxml/parser.pxi", line 1795, in lxml.etree._parseDocFromFilelike
-  File "src/lxml/parser.pxi", line 1201, in lxml.etree._BaseParser._parseDocFromFilelike
-  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
-  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
-  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
-  File "/odoo/odoo-server/addons/carrito-test/views/website_cart_p.xml", line 11
-lxml.etree.XMLSyntaxError: EndTag: '</' not found, line 11, column 1
+  File "/odoo/odoo-server/odoo/tools/convert.py", line 812, in convert_xml_import
+    relaxng.assert_(doc)
+  File "src/lxml/etree.pyx", line 3633, in lxml.etree._Validator.assert_
+AssertionError: Element odoo has extra content: template, line 3
+
+The above server error caused the following client error:
+RPC_ERROR: Odoo Server Error
+    RPCError@http://127.0.0.1:8069/web/assets/644-d4d381e/web.assets_backend.min.js:966:274
+    makeErrorFromResponse@http://127.0.0.1:8069/web/assets/644-d4d381e/web.assets_backend.min.js:970:163
+    jsonrpc/promise</<@http://127.0.0.1:8069/web/assets/644-d4d381e/web.assets_backend.min.js:978:34
