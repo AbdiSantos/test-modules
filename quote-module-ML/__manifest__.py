@@ -9,6 +9,10 @@
     'depends': ['website_sale'],
     'data': [
         'views/website_sale_cart.xml',
+        'static/src/js/button.js'
+    ],
+     'qweb': [
+        'static/src/xml/send_quotation_button.xml',
     ],
     'demo': [],
     'installable': True,
