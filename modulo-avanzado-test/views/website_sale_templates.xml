@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <data>
+    <template id="website_cart_test" name="test_carrito" inherit_id="website_sale.checkout">
+        <xpath expr="//a[@href='/shop/confirm_order']" position="after">
+        <script type="text/javascript" src="test-2/static/src/js/button.js"></script>
+                         <button class="btn btn-primary" id="my_cart_button">Show Cart Contents</button>   
+        </xpath>
+    </template>
+  </data>
+</odoo>
